@@ -1,0 +1,13 @@
+{
+  "name": "campaign-ai-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.9.0",
+  "engines": {
+    "node": "^18.18.0 || ^20.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter admin build",
+    "dev": "pnpm --filter admin dev",
+    "lint": "pnpm --filter admin lint"
+  }
+}

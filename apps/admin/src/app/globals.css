@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ring: hsl(215, 20.2%, 65.1%);
+    --color-border: hsl(214.3, 31.8%, 91.4%);
+    --color-background: hsl(0, 0%, 100%);
+    --color-foreground: hsl(222.2, 84%, 4.9%);
+  }
+
+  .dark {
+    --color-ring: hsl(215, 20.2%, 35.1%);
+    --color-border: hsl(214.3, 31.8%, 15%);
+    --color-background: hsl(222.2, 84%, 4.9%);
+    --color-foreground: hsl(0, 0%, 100%);
+  }
+}
