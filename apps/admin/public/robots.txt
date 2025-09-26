@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /
-
-# Campaign AI Admin Dashboard - Private Application
-# This is an internal admin tool and should not be indexed

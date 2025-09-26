@@ -1,6 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
 .env
-node_modules
-dist
-# Next.js build outputs
-.next
+.venv/
+venv/
+*.log
 
+# Django static/media
+staticfiles/
+media/
+
+# Node
+node_modules/
+.npm/
+.next/
+out/
+.env.local
+.env.development
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
