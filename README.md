@@ -4,12 +4,15 @@ This repository now houses the Campaign AI admin experience as a Next.js 14 appl
 
 ## Getting started
 
+Use the Node.js version declared in `package.json` (`^18.18` or `^20`) when working on the project. The development containers and CI pipelines currently run Node 20.19.4; if you use `nvm` you can match this by running `nvm install 20 && nvm use 20`. We also recommend letting Corepack manage the exact pnpm release shipped with the repo:
+
 ```bash
+corepack use pnpm@9.9.0
 pnpm install
 pnpm dev
 ```
 
-`pnpm install` runs at the repository root and installs the dependencies for every workspace package. The new root `package.json` exposes convenience scripts that scope commands to the Next.js admin dashboard so you no longer need to change directories manually. Under the hood `pnpm dev` is equivalent to `pnpm --filter admin dev`.
+`pnpm install` runs at the repository root and installs the dependencies for every workspace package. Enabling Corepack ensures you are using a pnpm build compatible with the supported Node versions so installs do not fail on newer Node releases. The new root `package.json` exposes convenience scripts that scope commands to the Next.js admin dashboard so you no longer need to change directories manually. Under the hood `pnpm dev` is equivalent to `pnpm --filter admin dev`.
 
 ## Available scripts
 
