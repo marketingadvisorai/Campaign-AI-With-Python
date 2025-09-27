@@ -16,58 +16,70 @@ A comprehensive AI-powered marketing platform for creating, managing, and optimi
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- Node.js 18+
+- pnpm (recommended) or npm
 
 ### Installation
 
 1. Clone the repository
 2. Install dependencies:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Start the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
-### Deploy to Vercel
+The app will be available at `http://localhost:3000`.
 
-1. Install Vercel CLI (optional):
+### Production Build
+
+```bash
+pnpm build
+pnpm start
+```
+
+The `start` command runs the production server using the output from the `.next` directory.
+
+## Deploy to Vercel
+
+1. Install the Vercel CLI (optional):
    ```bash
-   npm i -g vercel
+   pnpm add -g vercel
    ```
 
-2. Deploy:
+2. From the `frontend` directory run:
    ```bash
    vercel --prod
    ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+Vercel automatically detects the Next.js app and configures the correct build and output settings.
 
 ## Project Structure
 
 ```
 src/
+├── app/
+│   ├── layout.tsx        # Root layout wrapper
+│   └── page.tsx          # Application entry point
 ├── components/           # React components
-│   ├── ui/              # Reusable UI components (shadcn/ui)
-│   ├── LoginPage.tsx    # Authentication interface
+│   ├── ui/               # Reusable UI components (shadcn/ui)
+│   ├── LoginPage.tsx     # Authentication interface
 │   ├── ChatInterface.tsx # Main chat interface
 │   ├── AnalyticsPage.tsx # Analytics dashboard
 │   ├── IntegrationsPage.tsx # Platform integrations
 │   └── ...
-├── styles/
-│   └── globals.css      # Global styles (Tailwind CSS)
-└── main.tsx            # Application entry point
+└── app/globals.css       # Global styles (Tailwind CSS)
 ```
 
 ## Technology Stack
 
+- **Next.js 14** - React framework & routing
 - **React 18** - UI framework
 - **TypeScript** - Type safety
 - **Tailwind CSS v4** - Styling
-- **Vite** - Build tool
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Icon library
 - **shadcn/ui** - Pre-built component library
@@ -78,10 +90,10 @@ No environment variables are required for the base application. All integrations
 
 ## Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start the production server
+- `pnpm lint` - Run ESLint via Next.js
 
 ## Contributing
 

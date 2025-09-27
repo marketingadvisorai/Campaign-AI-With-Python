@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import type { ReactNode } from 'react';
+import Image from 'next/image';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import exampleImage from '../assets/10157d43732b6b78326298306e998e3ffad38209.png';
 import { 
   Plug, 
   Search, 
@@ -41,7 +42,7 @@ import {
 interface Integration {
   id: string;
   name: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   status: 'connected' | 'disconnected' | 'error';
   description: string;
   category: 'advertising' | 'analytics' | 'website' | 'crm';
@@ -60,7 +61,7 @@ interface AIConnectStep {
   title: string;
   description: string;
   platforms: string[];
-  icon: React.ReactNode;
+  icon: ReactNode;
   status: 'pending' | 'completed' | 'current';
   estimatedTime: string;
   benefits: string[];
@@ -481,9 +482,11 @@ export function IntegrationsPage({ onShowOnboarding }: IntegrationsPageProps) {
               <Card className="p-4 sm:p-6 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950 dark:to-teal-950 border-emerald-200 dark:border-emerald-800">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                    <img 
-                      src={exampleImage} 
-                      alt="AI Setup Wizard" 
+                    <Image
+                      src="/assets/10157d43732b6b78326298306e998e3ffad38209.png"
+                      alt="AI Setup Wizard"
+                      width={128}
+                      height={128}
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl object-cover"
                     />
                     <div>

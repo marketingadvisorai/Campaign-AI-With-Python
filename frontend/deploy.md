@@ -8,7 +8,7 @@
 2. Visit [vercel.com](https://vercel.com)
 3. Click "Import Project"
 4. Select your repository
-5. Vercel will automatically detect it's a Vite project
+5. Vercel will automatically detect the Next.js app
 6. Click "Deploy"
 
 ### Option 2: Deploy via Vercel CLI
@@ -16,7 +16,7 @@
 1. Install Vercel CLI:
 
    ```bash
-   npm i -g vercel
+   pnpm add -g vercel
    ```
 
 2. In your project directory, run:
@@ -36,35 +36,38 @@
 
 4. Your app will be deployed and you'll get a live URL!
 
-### Option 3: Manual Upload
+### Option 3: Manual Deployment to a Node Host
 
 1. Build the project:
 
    ```bash
-   npm run build
+   pnpm build
    ```
 
-2. Upload the `dist` folder contents to any static hosting provider
+2. Start the production server:
+
+   ```bash
+   pnpm start
+   ```
+
+3. Deploy the `.next` build output and run the same command in your hosting environment.
 
 ## Other Hosting Options
 
 ### Netlify
 
-1. Build: `npm run build`
-2. Publish directory: `dist`
-3. Drag and drop the `dist` folder to Netlify
+1. Build: `pnpm build`
+2. Publish using the official Next.js Netlify adapter or Netlify Edge Functions
 
 ### Cloudflare Pages
 
 1. Connect your GitHub repository
-2. Build command: `npm run build`
-3. Build output directory: `dist`
+2. Build command: `pnpm build`
+3. Set the framework preset to Next.js
 
 ### GitHub Pages
 
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
-3. Build and deploy: `npm run build && npm run deploy`
+GitHub Pages is intended for static sites. To deploy a Next.js app you would need to export a static build or use GitHub Actions to run a Node server. Vercel or Netlify are recommended.
 
 ## Environment Configuration
 
@@ -81,8 +84,8 @@ For production use, you would need to:
 Before deploying, verify your build works locally:
 
 ```bash
-npm run build
-npm run preview
+pnpm build
+pnpm start
 ```
 
 This starts a local server with the production build to test everything works correctly.
