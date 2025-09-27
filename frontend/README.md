@@ -49,28 +49,31 @@ Or connect your GitHub repository to Vercel for automatic deployments.
 ## Project Structure
 
 ```
-src/
-├── components/           # React components
-│   ├── ui/              # Reusable UI components (shadcn/ui)
-│   ├── LoginPage.tsx    # Authentication interface
-│   ├── ChatInterface.tsx # Main chat interface
-│   ├── AnalyticsPage.tsx # Analytics dashboard
-│   ├── IntegrationsPage.tsx # Platform integrations
-│   └── ...
-├── styles/
-│   └── globals.css      # Global styles (Tailwind CSS)
-└── main.tsx            # Application entry point
+app/
+├── layout.jsx           # Root layout wrapper
+├── page.jsx             # Main application page (client component)
+├── globals.css          # Global styles (precompiled Tailwind layer)
+
+components/
+├── ui/                  # Reusable UI components (shadcn/ui inspired)
+├── LoginPage.jsx        # Authentication interface
+├── ChatInterface.jsx    # Main chat interface
+├── AnalyticsPage.jsx    # Analytics dashboard
+├── IntegrationsPage.jsx # Platform integrations
+└── ...
+
+public/
+└── assets/              # Static assets used across the app
 ```
 
 ## Technology Stack
 
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Tailwind CSS v4** - Styling
-- **Vite** - Build tool
+- **Next.js 14 (App Router)** - React framework & routing
+- **React 18** - UI rendering
+- **Precompiled Tailwind CSS v4 styles** - Utility-first styling
 - **Radix UI** - Accessible component primitives
 - **Lucide React** - Icon library
-- **shadcn/ui** - Pre-built component library
+- **shadcn/ui-inspired components** - Reusable UI elements
 
 ## Environment Variables
 
@@ -78,10 +81,10 @@ No environment variables are required for the base application. All integrations
 
 ## Scripts
 
-- `npm run dev` - Start development server
+- `npm run dev` - Start the Next.js development server
 - `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `npm run start` - Start the production server locally
+- `npm run lint` - Run ESLint with Next.js defaults
 
 ## Contributing
 
