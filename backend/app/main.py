@@ -17,11 +17,18 @@ def create_application() -> FastAPI:
             allow_headers=["*"],
         )
 
+    # API router with prefix
     app.include_router(api_router, prefix=settings.api_v1_str)
 
+    # health route
     @app.get("/health", tags=["health"])
     def health_check():
         return {"status": "ok"}
+
+    # home route
+    @app.get("/", tags=["home"])
+    def home():
+        return {"message": "Hello Campaign AI"}
 
     return app
 
